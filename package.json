@@ -1,0 +1,19 @@
+{
+  "name": "mycalculator",
+  "version": "1.0.0",
+  "description": "My alexa calculatr skill",
+  "main": "(index.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "calculator",
+    "alexa"
+  ],
+  "author": "Joel Joseph",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk-core": "^2.0.0",
+    "ask-sdk-model": "^1.0.0"
+  }
+}
