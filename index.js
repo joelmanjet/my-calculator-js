@@ -15,7 +15,7 @@ const LaunchRequestHandler = {
         //welcome message
         let speechText = 'Welcome to My Calculator. You can say, add 2 and 5, or multiply 4 and 8.';
         //welcome screen message
-        let displayText = "Welcome to My Calculator"
+        let displayText = "Welcome to My Calculator";
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -28,7 +28,7 @@ const LaunchRequestHandler = {
 const AddIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'AddIntent'
+            && handlerInput.requestEnvelope.request.intent.name === 'AddIntent';
     },
     handle(handlerInput) {
         let speechText = '';
@@ -64,7 +64,7 @@ const AddIntentHandler = {
 const SubtractIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'SubtractIntent'
+            && handlerInput.requestEnvelope.request.intent.name === 'SubtractIntent';
     },
     handle(handlerInput) {
         let speechText = '';
@@ -143,10 +143,12 @@ const SessionEndedRequestHandler = {
 
 //Lambda handler function
 //Remember to add custom request handlers here
-exports.handler = Alexa.SkillBuilders.custom()
+exports.handler = Alexa.SkillBuilders
+    .custom()
     .addRequestHandlers(LaunchRequestHandler,
         AddIntentHandler,
         SubtractIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
-        SessionEndedRequestHandler).lambda();
+        SessionEndedRequestHandler)
+    .lambda();
